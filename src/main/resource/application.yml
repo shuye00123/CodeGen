@@ -1,0 +1,37 @@
+spring:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    username: root
+    password: xb163
+    url: jdbc:mysql://192.168.0.32:3306/db_parking_m2?useUnicode=true&characterEncoding=UTF-8&useSSL=false&zeroDateTimeBehavior=convertToNull
+
+  jooq:
+    sql-dialect: mysql
+
+
+codemaker:
+  group: com.xiaobo                        #项目组织
+  artifact: servicebooking                 #项目名称
+
+  path:
+    codeBasePath: src.main.java           #代码基础包路径
+    modelPath: entity                     #生成表单实体类目录
+    servicesPath: services                #服务层目录
+    controllerPath: controller            #Controller目录
+    repositoryPath: daos                  #JOOQ DAO封装类目录
+    codeOutPath: d:\\CodeMaker2\\         #代码输出目录
+
+  table:
+      tableNameList:                      #生成表名称(支持多表生成)
+          - t_order_bookings_allocations
+
+      entityNameList:                     #JOOQ生成实体类名称对应列表(不写自动按JOOQ生成规则)
+
+
+  strategy:                               #生成策略
+    serviceInterface: false                #是否生成服务类接口
+    restcontoller: false                   #是否生成示例RestController
+
+  info:
+    author: hjk                           #作者
+    apiVersion: v2                        #api版本
